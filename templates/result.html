@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Results</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .result-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: red;">🩸 Detection Results</h1>
+    <hr>
+
+    <div class="result-box">
+        <h3>Patient Information</h3>
+        <p><b>Name:</b> {{ name }}</p>
+        <p><b>Age:</b> {{ age }}</p>
+        <p><b>Gender:</b> {{ gender }}</p>
+        <p><b>Blood Group:</b> <span style="font-size: 1.2em; font-weight: bold; color: blue;">{{ blood_group }}</span>
+        </p>
+        <p><b>Detected Components:</b> {{ labels }}</p>
+
+        <h3>Detected Image</h3>
+        <img src="{{ image }}" alt="Processed Image">
+    </div>
+
+    <br>
+    <a href="{{ url_for('download_pdf') }}" class="btn">📥 Download Advanced PDF Report</a>
+    <br><br>
+    <a href="{{ url_for('patient_info') }}">🔁 New Patient</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Group Detection</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f5f6fa;
+        }
+
+        .upload-container {
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #preview {
+            display: none;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .drag-area {
+            padding: 40px;
+            border: 3px dashed #6c63ff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .drag-area:hover {
+            background: #eef0ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="upload-container">
+
+        <h2 class="mb-4">🩸 Blood Group Detection</h2>
+        <p class="text-muted">Upload an image to detect A / B / D markers</p>
+
+        <form id="uploadForm" method="post" enctype="multipart/form-data" action="/upload">
+
+            <label class="drag-area" for="fileInput">
+                <strong>Click to Upload</strong> or Drop Image Here
+            </label>
+
+            <input id="fileInput" type="file" name="file" accept="image/*" hidden>
+
+            <img id="preview" />
+
+            <button class="btn btn-primary w-100 mt-4" type="submit">
+                Upload & Detect
+            </button>
+
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Preview Image -->
+    <script>
+        const fileInput = document.getElementById("fileInput");
+        const preview = document.getElementById("preview");
+
+        fileInput.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

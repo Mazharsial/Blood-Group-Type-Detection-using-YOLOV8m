@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Results - Blood Group Detection</title>
+</head>
+
+<body>
+    <h2>🔬 Detection Results</h2>
+    <p><b>Detected Blood Group:</b> {{ blood_group }}</p>
+    <p><b>Detected Markers:</b> {{ labels }}</p>
+
+    <h3>Detected Sample Image</h3>
+    <img src="{{ image }}" alt="Detected Image" style="max-width:600px;">
+
+    <p>
+        <a href="{{ url_for('download_pdf') }}">📥 Download Premium PDF Report</a>
+    </p>
+
+    <p>
+        <a href="{{ url_for('form_page') }}">🔁 New Patient</a> |
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </p>
+</body>
+
+</html>

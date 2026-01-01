@@ -1,0 +1,13 @@
+train: r"C:\Users\Mazhar Sial\OneDrive\Desktop\dip_project\Blood Group Detection.v4i.yolov11\train"
+val: r"C:\Users\Mazhar Sial\OneDrive\Desktop\dip_project\Blood Group Detection.v4i.yolov11\valid"
+test: r"C:\Users\Mazhar Sial\OneDrive\Desktop\dip_project\Blood Group Detection.v4i.yolov11\test"
+
+nc: 3
+names: ['A', 'B', 'D']
+
+roboflow:
+  workspace: minor-project-5th-semester
+  project: blood-group-detection-4yvdx
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/minor-project-5th-semester/blood-group-detection-4yvdx/dataset/4

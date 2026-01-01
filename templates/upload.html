@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload Sample</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .box {
+            border: 2px dashed #ccc;
+            padding: 40px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: red;">🩸 Blood Group Detection</h1>
+    <hr>
+    <h3>📂 Upload Blood Sample Image</h3>
+    <div class="box">
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".jpg,.jpeg,.png" required>
+            <br><br>
+            <button type="submit" style="padding: 10px 20px; background: #dc3545; color: white; border: none;">🔍
+                Process</button>
+        </form>
+    </div>
+</body>
+
+</html>
